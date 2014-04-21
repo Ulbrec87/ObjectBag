@@ -1,0 +1,8 @@
+Simple Dependency Injection Container 
+
+You can use this library to initialize single instance of a class in your
+application. 
+You should always use Dependency Injection instead of Singleton (is considered
+an antipattern).
+
+Inspired by https://github.com/TomBZombie/Dice
