@@ -1,8 +1,6 @@
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-require_once 'src/BagClasses.php';
+require_once 'src/ObjectBag.php';
 
 class A {
 
@@ -17,9 +15,11 @@ class A {
 }
 
 class B {
-  /* public function __construct() {
 
-    } */
+  public function __construct() {
+
+  }
+
 }
 
 Class C {
@@ -65,8 +65,6 @@ class E {
 
 }
 
-$bag = new BagClasses();
-$obj = $bag->getInstance('E', array("1", "2"));
-var_dump($obj);
-exit;
+$bag = new Bag\ObjectBag();
+$obj = $bag->getInstance('D', array("arg1", "arg2"));
 $obj2 = $bag->getInstance('A');
