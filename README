@@ -6,3 +6,40 @@ You should always use Dependency Injection instead of Singleton (is considered
 an antipattern).
 
 Inspired by https://github.com/TomBZombie/Dice
+
+Example:
+
+class B {
+  public function __construct() {
+
+    } 
+}
+
+Class C {
+
+  protected $b;
+
+  public function __construct(B $b) {
+    $this->b = $b;
+  }
+
+}
+
+class D {
+
+  protected $c;
+  protected $t1;
+  protected $t2;
+
+  public function __construct(C $c, $type1, $type2) {
+    $this->c = $c;
+    $this->t1 = $type1;
+    $this->t2 = $type2;
+  }
+
+}
+
+
+$bag = new ObjectBag();
+$d = $obj->getInstance('D',array("arg1","arg2"));
+var_dump($d);
